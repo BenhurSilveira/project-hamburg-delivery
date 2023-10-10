@@ -46,7 +46,7 @@ app.post('/orders', (request, response) => {
 
     const {order, clientName, price, status} = request.body
 
-    const orderList = {id: uuid.v4(), order, clientName, price, status }
+    const orderList = {id: uuid.v4(), order, clientName, price, status: "Em preparação" }
 
     orders.push(orderList)
     
@@ -61,7 +61,7 @@ app.put('/orders/:id', checkOrderId, (request, response) => {
 
     const id = request.orderId
 
-    const updatedOrderList = { id, order, clientName, price, status}
+    const updatedOrderList = { id, order, clientName, price, status: "Em preparação"}
 
     orders[index] = updatedOrderList
     
